@@ -10,7 +10,7 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - bundle exec rails db:create RAILS_ENV=test
-  - bundle exec rails db:migrate 
+  - bundle exec rails db:migrate
   - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT
