@@ -17,7 +17,7 @@ RSpec.describe Search, type: :model do
   end
 
   describe 'Validations' do
-    it 'is valid with valid properties' do
+    it "is valid with valid properties" do
       search = Search.new(
         search_term: 'music',
         user: subject
@@ -25,12 +25,27 @@ RSpec.describe Search, type: :model do
       expect(search).to be_valid
     end
 
-    it 'is invalid without a search term' do
+    it "is invalid without a search term" do
       bad_search = Search.new(
-        search_term: '',
+        search_term: nil,
         user: subject
       )
       expect(bad_search).to_not be_valid
+    end
+
+    it "is invalid without a user" do
+      bad_search = Search.new(
+        search_term: "TestTerm",
+        user: nil
+      )
+      expect(bad_search).to_not be_valid
+    end
+  end
+
+  describe "Associations" do
+    it "should have one User" do
+      assoc = Search.reflect_on_association(:user)
+      expect(assoc.macro).to eq :belongs_to
     end
   end
 end

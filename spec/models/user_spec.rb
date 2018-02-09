@@ -17,22 +17,38 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'Validations' do
     it 'is valid with valid attributes' do
-      user = User.new(name: 'Sam', email: 'sam@mail.com', password: 'password')
+      user = User.new(
+        name: 'Sam',
+        email: 'sam@mail.com',
+        password: 'password'
+      )
       expect(user).to be_valid
     end
 
     it 'is invalid without a name' do
-      bad_user = User.new(name: '', email: 'sam@mail.com', password: 'password')
+      bad_user = User.new(
+        name: nil,
+        email: 'sam@mail.com',
+        password: 'password'
+      )
       expect(bad_user).to_not be_valid
     end
 
     it 'is invalid without an email' do
-      bad_user = User.new(name: 'Sam', email: '', password: 'password')
+      bad_user = User.new(
+        name: 'Sam',
+        email: nil,
+        password: 'password'
+      )
       expect(bad_user).to_not be_valid
     end
 
     it 'is invalid without a password' do
-      bad_user = User.new(name: 'Sam', email: 'sam@mail.com', password: '')
+      bad_user = User.new(
+        name: 'Sam',
+        email: 'sam@mail.com',
+        password: nil
+      )
       expect(bad_user).to_not be_valid
     end
   end
