@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: music-search_development
   pool: 5
-  username: erikperez
+  username: postgres
   password: postgresql
 
 test:
@@ -11,7 +11,7 @@ test:
   encoding: unicode
   database: music-search
   pool: 5
-  username: erikperez
+  username: postgres
   password: postgresql
 
 
@@ -20,5 +20,5 @@ production:
   encoding: unicode
   database: music-search_production
   pool: 5
-  username: erikperez
+  username: postgres
   password: postgresql
