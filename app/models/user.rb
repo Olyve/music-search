@@ -27,7 +27,7 @@ class User < ApplicationRecord
   def self.authenticate(email, password)
     user = self.find_by_email(email)
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
-      users
+      user
     else
       nil
     end
