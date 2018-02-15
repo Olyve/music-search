@@ -14,7 +14,7 @@ gem 'puma', '~> 3.7'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 # Use ActiveModel has_secure_password
-
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
