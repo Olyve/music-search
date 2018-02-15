@@ -1,0 +1,17 @@
+{
+  "song": {
+    "name": "string",
+    "artist": "string",
+    "album_images": {
+      "spotify": "link",
+      "apple_music": "link"
+    },
+    "isrc": "number",
+    "on_spotify": true,
+    "on_apple_music": true,
+    "external_links": {
+      "spotify": "link",
+      "apple_music": "link"
+    }
+  }
+}
